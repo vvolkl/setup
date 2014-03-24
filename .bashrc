@@ -12,3 +12,7 @@ if [ -f /etc/bashrc ]; then
 fi
 unset SSH_ASKPASS
 export SVN_EDITOR=vim
+
+
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
