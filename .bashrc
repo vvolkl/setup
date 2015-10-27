@@ -59,6 +59,7 @@ export EDITOR=vim
 
 # disable capslock without disabling capslock key
 setxkbmap -option caps:none
+xmodmap -e 'keycode 66=Super_L'
 
 function ct {
 IN=$PWD
