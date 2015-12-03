@@ -129,6 +129,7 @@ color: #E7E7E7 !important;
 margin: 10px;
 }
 
+/*
 div#notebook {
     background: linear-gradient(to right, #F7F7F7, rgba(45, 45, 45, 1), #F7F7F7) repeat scroll 0% 0% transparent;
 }
@@ -137,8 +138,6 @@ background: radial-gradient(farthest-corner at 100% 50% , #FFF 60%, #F7F7F7 99%)
 }
 
 .toolbar_info, .list-container {color: #393F45;}
-/* NOTEBOOK */
-/* comment out this line to bring the toolbar back */
 div#maintoolbar, div#header {display: none !important;}
 
 .tab-content {
@@ -199,7 +198,6 @@ img {
     margin-right: auto;
     height: auto }
 
-/* GLOBALS */
 body {background-color: #F7F7F7;}
 /*
 .cm-s-ipython .emphasis {
@@ -239,7 +237,6 @@ body {background-color: #F7F7F7;}
 .cm-s-ipython span.cm-atom {
   color: #2aa198;
 }
-*/
 .cm-s-ipython span.cm-number {
   color: #93a1a1;
 }
@@ -265,13 +262,11 @@ body {background-color: #F7F7F7;}
 .cm-s-ipython span.cm-operator {
   color: #839496;
 }
-*/
 .cm-s-ipython span.cm-string {
   color: #6c71c4;
   background-color: #F0F0FF;
   border-radius: 8px;
 }
-*/
 .cm-s-ipython span.cm-error {
   font-weight: bold;
   border-bottom: 1px dotted #cb4b16;

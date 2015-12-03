@@ -1,5 +1,6 @@
 execute pathogen#infect()
 
+
 syntax enable
 
 set expandtab
@@ -22,7 +23,12 @@ colorscheme distinguished
 "  endwhile
 "endfun
 "nmap <Space> :call SelectIndent()<CR>
-
+"
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+    augroup pandoc_syntax
+        au! BufNewFile,BufFilePRe,BufRead *.md set filetype=markdown.pandoc
+    augroup END
 
 map <F5> <Esc>:w<CR>:!make<CR>
 map Z vas5<vasgq>as<<)
