@@ -48,7 +48,9 @@ fi
 # bash convenience
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=1000000
-#alias vim='gvim -v'
+if [ -n `command -v gvim` ]; then
+    alias vim='gvim -v'
+fi
 set -o vi
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'

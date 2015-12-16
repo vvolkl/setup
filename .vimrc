@@ -1,17 +1,16 @@
 execute pathogen#infect()
-
-
+                
 syntax enable
 
 set expandtab
-set tabstop=4
+set tabstop=2
 set shiftwidth=2
 set background=dark
-"set smartindent" "horrible when copy&pasting"
-"set smarttab"
+set smartindent "horrible when copy&pasting"
+set smarttab
 colorscheme distinguished
 
-"really nice: selecting a whole block based on indentation"
+"selecting a whole block based on indentation"
 "function! SelectIndent ()
 "  let temp_var=indent(line("."))
 "  while indent(line(".")-1) >= temp_var
@@ -24,15 +23,24 @@ colorscheme distinguished
 "endfun
 "nmap <Space> :call SelectIndent()<CR>
 "
+
+"Markdown syntax highlighting"
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
     augroup pandoc_syntax
         au! BufNewFile,BufFilePRe,BufRead *.md set filetype=markdown.pandoc
     augroup END
 
+"IDE features with ctags"
+set isfname-=/ 
+map <F7> :let sourcereplacement=expand('%:t')<cr> :let sourcereplacement=substitute(sourcereplacement,".h",".cpp", "")<cr> :execute("tag ".sourcereplacement)<cr>
+map <F8> :let mycurf=expand("<cfile>")<cr>  :execute("tag ".mycurf)<cr>
+
+
 map <F5> <Esc>:w<CR>:!make<CR>
+imap jk <Esc>
+"latex sentence formatting"
 map Z vas5<vasgq>as<<)
-set shiftwidth=2
 
 " ignore these files when completing names and in Ex
 set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pdf,*.bak,*.beam,*.aux,*.loc,*.lox,*.backup,*.toc
@@ -40,4 +48,3 @@ set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.
 " comes to matching wildcards
 set suffixes+=.old,*.log
 
-imap jk <Esc>
