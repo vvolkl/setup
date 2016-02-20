@@ -5,6 +5,8 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+export AFSHOME=/afs/cern.ch/user/v/vavolkl
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -25,13 +27,13 @@ fi
 #export C_INCLUDE_PATH=$C_INCLUDE_PATH:$ROOTSYS/include/root
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib
 #export PYTHONPATH=$PYTHONPATH:/opt/hep/lib/root
-##export PYTHONPATH=$PYTHONPATH:$ROOTSYS/python
-#
-## thesis stuff
-#export PYTHONPATH=$HOME/Dropbox/master-thesis/lib/python/:$HOME/soft/lib64/python:$HOME/soft/lib/python:$PYTHONPATH
+#export PYTHONPATH=$PYTHONPATH:$ROOTSYS/python
+
+# thesis stuff
+export PYTHONPATH=$HOME/tebdmaster/lib/python/:$PYTHONPATH
 #export THESIS=$HOME/Dropbox/master-thesis
-#export tlib=$HOME/Dropbox/master-thesis/lib/python
-##export CP=$THESIS/bin/TEBDnew/XXZDiss
+export tlib=$HOME/tebdmaster/lib/python
+#export CP=$THESIS/bin/TEBDnew/XXZDiss
 #export RTHESIS=/net/mungo3/csak4665/tebdmaster
 #export RHOME=/net/mungo3/csak4665
 #export HOME2=$HOME/cluster.archive
@@ -51,7 +53,13 @@ fi
 # bash convenience
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=1000000
+<<<<<<< HEAD
 #alias vim='gvim -v'
+=======
+if [ -n `command -v gvim` ]; then
+    alias vim='gvim -v'
+fi
+>>>>>>> 04e7ebb9010e694c37a85a0952a2253108187dcb
 set -o vi
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
@@ -63,7 +71,12 @@ export SVN_EDITOR=vim
 export EDITOR=vim
 
 # disable capslock without disabling capslock key
+<<<<<<< HEAD
 #setxkbmap -option caps:none
+=======
+setxkbmap -option 'caps:none'
+xmodmap -e 'keycode 66=Escape'
+>>>>>>> 04e7ebb9010e694c37a85a0952a2253108187dcb
 
 function ct {
 IN=$PWD
