@@ -53,13 +53,9 @@ fi
 # bash convenience
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=1000000
-<<<<<<< HEAD
-#alias vim='gvim -v'
-=======
 if [ -n `command -v gvim` ]; then
     alias vim='gvim -v'
 fi
->>>>>>> 04e7ebb9010e694c37a85a0952a2253108187dcb
 set -o vi
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
@@ -71,12 +67,8 @@ export SVN_EDITOR=vim
 export EDITOR=vim
 
 # disable capslock without disabling capslock key
-<<<<<<< HEAD
-#setxkbmap -option caps:none
-=======
 setxkbmap -option 'caps:none'
 xmodmap -e 'keycode 66=Escape'
->>>>>>> 04e7ebb9010e694c37a85a0952a2253108187dcb
 
 function ct {
 IN=$PWD
