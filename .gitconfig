@@ -1,0 +1,5 @@
+[user]
+	name = Valentin Volkl
+	email = valentin.volkl@cern.ch
+[push]
+	default = current
