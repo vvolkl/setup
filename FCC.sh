@@ -1,8 +1,8 @@
 
 export LCGENV_PATH=/opt/lcg
-export CMTCONFIG=x86_64-ubuntu1510-gcc52-opt
-export LCG_SYSTEM=x86_64-ubuntu1510-gcc52
-export CMTPROJECTPATH=/home/vali/lcgcmake/cmake/toolchain
+export CMTCONFIG=x86_64-ubuntu1604-gcc49-opt
+export LCG_SYSTEM=x86_64-ubuntu1604-gcc49
+export CMTPROJECTPATH=/home/vavolkl/lcgcmake/cmake/toolchain
 
 export CMAKE_PREFIX_PATH=$LCGENV_PATH/clhep/2.3.1.1/$CMTCONFIG:\
 $LCGENV_PATH/HepPDT/2.06.01/$CMTCONFIG:\
@@ -20,6 +20,9 @@ $LCGENV_PATH/HepMC/2.06.09/$CMTCONFIG:\
 $LCGENV_PATH/ROOT/6.06.00/$CMTCONFIG:\
 $LCGENV_PATH/fastjet/3.1.1/$CMTCONFIG:\
 $LCGENV_PATH/Geant4/10.02/$CMTCONFIG:\
+$LCGENV_PATH/Boost/1.59.0_python2.7/$CMTCONFIG:\
+$LCGENV_PATH/tbb/42_20140122/$CMTCONFIG:\
+$LCGENV_PATH/CppUnit/1.12.1_p1/$CMTCONFIG:\
 $LCGENV_PATH/MCGenerators/pythia8/212/$CMTCONFIG:\
 $HOME/FCC/Gaudi/InstallArea/$CMTCONFIG:\
 $HOME/FCC/Delphes-3.3.2-install:\
