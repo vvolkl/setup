@@ -118,9 +118,9 @@ _ct()
 }
 complete -F _ct ct
 
-. ~/setup/git-completion.bash
+. ~/.dotfiles/git-completion.bash
 
-. ~/setup/git-prompt.sh
+. ~/.dotfiles/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\w$(__git_ps1 " (%s)")\$ '
 

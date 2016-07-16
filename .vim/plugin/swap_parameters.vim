@@ -78,10 +78,6 @@
 " already installed.
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if !has('python')
-    s:ErrMsg( "Error: Required vim compiled with +python" )
-    finish
-endif
 
 
 function! SwapParams(directionName)
