@@ -29,6 +29,7 @@ $HOME/FCC/Delphes-install:\
 $HOME/FCC/podio/install:\
 $HOME/FCC/podio/install/cmake:\
 $HOME/FCC/fcc-edm/install:\
+/opt/ACTS/0.01.00:\
 $HOME/FCC/DD4hep-install
 echo "set CMAKE_PREFIX_Path"
 echo $CMAKE_PREFIX_PATH
