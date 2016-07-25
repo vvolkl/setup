@@ -56,7 +56,7 @@ export HISTFILESIZE=1000000
 if [ -n `command -v gvim` ]; then
     alias vim='gvim -v'
 fi
-#set -o vi
+set -o emacs
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 alias xclip="xclip -selection c"
@@ -124,3 +124,4 @@ complete -F _ct ct
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\w$(__git_ps1 " (%s)")\$ '
 
+alias go='git checkout '
