@@ -118,10 +118,11 @@ _ct()
 }
 complete -F _ct ct
 
+# set up git prompt and shortcuts
 . ~/.dotfiles/git-completion.bash
-
 . ~/.dotfiles/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\w$(__git_ps1 " (%s)")\$ '
-
 alias go='git checkout '
+
+. $HOME/FCC.sh

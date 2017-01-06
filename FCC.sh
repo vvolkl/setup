@@ -1,9 +1,11 @@
+echo "Set up FCCSW environment ..."
+export CURDIR=$PWD
 
 export LCGENV_PATH=/opt/lcg
 export LCG_SYSTEM=x86_64-ubuntu1604-gcc53
 export CMTCONFIG=$LCG_SYSTEM-opt
+export BINARY_TAG=$CMTCONFIG
 export CMTPROJECTPATH=/home/vavolkl/lcgcmake/cmake/toolchain
-
 export CMAKE_PREFIX_PATH=$LCGENV_PATH/clhep/2.3.1.1/$CMTCONFIG:\
 $LCGENV_PATH/HepPDT/2.06.01/$CMTCONFIG:\
 $LCGENV_PATH/AIDA/3.2.1/$CMTCONFIG:\
@@ -31,31 +33,25 @@ $HOME/FCC/podio/install/cmake:\
 $HOME/FCC/fcc-edm/install:\
 /opt/ACTS/0.01.00:\
 $HOME/FCC/DD4hep-install
-echo "set CMAKE_PREFIX_Path"
-echo $CMAKE_PREFIX_PATH
 
+export ACTS_DIR=/opt/ACTS/0.01.00
 
-
-echo "Set up ROOT..."
+# echo "Set up ROOT..."
 cd $LCGENV_PATH/ROOT/6.06.00/$CMTCONFIG
 source bin/thisroot.sh
 
-echo "Set up GEANT..."
+# echo "Set up GEANT..."
 cd $LCGENV_PATH/Geant4/10.02/$CMTCONFIG
 source bin/geant4.sh
 
 
-echo "Set Library Path..."
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/FCC/fcc-edm/install/lib:$HOME/FCC/podio/install/lib:$HOME/FCC/DD4hep-install/lib:$HOME/FCC/FCCSW/build.$CMTCONFIG/lib
+# echo "Set Library Path..."
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/FCC/fcc-edm/install/lib:$HOME/FCC/podio/install/lib:$HOME/FCC/DD4hep-install/lib:$HOME/FCC/FCCSW/build.$CMTCONFIG/lib:$ACTS_DIR/lib
 
 export PATH=$PATH:$HOME/FCC/DD4hep-install/bin
-
 export DD4hep_DIR=$HOME/FCC/DD4hep-install/
 export DD4hepINSTALL=$HOME/FCC/DD4hep-install/
 
 export PYTHONPATH=$PYTHONPATH:$HOME/FCC/podio/python
-#echo "Change to FCCSW source directory .."
-#cd $HOME/FCC/FCCSW
-cd $HOME/FCC/
 
-
+cd $CURDIR

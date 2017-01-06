@@ -261,7 +261,7 @@ axes.unicode_minus  : True    # use unicode for the minus symbol
 # use 
 # map(mpl.colors.rgb2hex, mpl.cm.Set1(np.linspace(0,1,24)))
 
-axes.color_cycle    :   e41a1c, a83d52, 6d5f88, 3880b4, 3f918e, 47a268, 52a850, 6c876f, 886291, a6558d, ca6654, ed771c, ff9509, ffc11a, ffed2c, eddc31, cb9c2d, ac6229, bc6251, d87186, f47fba, da88b3, b991a6, 999999
+axes.prop_cycle    :   cycler('color', ('e41a1c', 'a83d52', '6d5f88', '3880b4', '3f918e', '47a268', '52a850', '6c876f', '886291', 'a6558d', 'ca6654', 'ed771c', 'ff9509', 'ffc11a', 'ffed2c', 'eddc31', 'cb9c2d', 'ac6229', 'bc6251', 'd87186', 'f47fba', 'da88b3', 'b991a6', '999999'))
 
                          # color cycle for plot lines
                                             # as list of string colorspecs:
