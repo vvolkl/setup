@@ -1,9 +1,32 @@
 # .bashrc
 
+source /afs/cern.ch/sw/IntelSoftware/linux/all-setup.sh &> /dev/null;
+
+# Add the passed value only to path if it's not already in there.
+function add_to_path {
+    if [ -z "$1" ] || [[ "$1" == "/lib" ]]; then
+        return
+    fi
+    path_name=${1}
+    eval path_value=\$$path_name
+    path_prefix=${2}
+    case ":$path_value:" in
+      *":$path_prefix:"*) :;;        # already there
+      *) path_value=${path_prefix}:${path_value};; # or prepend path
+    esac
+    eval export ${path_name}=${path_value}
+}
+
+
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+
+export LS_OPTIONS='--color=auto'
+eval "`dircolors`"
+alias ls='ls $LS_OPTIONS'
 
 export AFSHOME=/afs/cern.ch/user/v/vavolkl
 
@@ -32,7 +55,7 @@ export AFSHOME=/afs/cern.ch/user/v/vavolkl
 # thesis stuff
 export PYTHONPATH=$HOME/tebdmaster/lib/python/:$PYTHONPATH
 #export THESIS=$HOME/Dropbox/master-thesis
-export tlib=$HOME/tebdmaster/lib/python
+export tlib=$HOME/Desktop/tebdmaster/lib/python
 #export CP=$THESIS/bin/TEBDnew/XXZDiss
 #export RTHESIS=/net/mungo3/csak4665/tebdmaster
 #export RHOME=/net/mungo3/csak4665
@@ -53,9 +76,9 @@ fi
 # bash convenience
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=1000000
-if [ -n `command -v gvim` ]; then
-    alias vim='gvim -v'
-fi
+#if [ -n `command -v gvim` ]; then
+#    alias vim='gvim -v'
+#fi
 set -o emacs
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
@@ -125,4 +148,3 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\w$(__git_ps1 " (%s)")\$ '
 alias go='git checkout '
 
-. $HOME/FCC.sh
