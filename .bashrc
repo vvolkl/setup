@@ -1,6 +1,11 @@
-# .bashrc
 
-source /afs/cern.ch/sw/IntelSoftware/linux/all-setup.sh &> /dev/null;
+alias root='root -l'
+alias rootls='rootls -t'
+
+export FONTCONFIG_PATH=/etc/fonts
+
+export WOR=/afs/cern.ch/work/v/vavolkl
+#source /afs/cern.ch/sw/IntelSoftware/linux/all-setup.sh &> /dev/null;
 
 # Add the passed value only to path if it's not already in there.
 function add_to_path {
@@ -18,6 +23,7 @@ function add_to_path {
 }
 
 
+add_to_path PATH $HOME/.local/bin
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -53,7 +59,7 @@ export AFSHOME=/afs/cern.ch/user/v/vavolkl
 #export PYTHONPATH=$PYTHONPATH:$ROOTSYS/python
 
 # thesis stuff
-export PYTHONPATH=$HOME/tebdmaster/lib/python/:$PYTHONPATH
+#export PYTHONPATH=$HOME/tebdmaster/lib/python/:$PYTHONPATH
 #export THESIS=$HOME/Dropbox/master-thesis
 export tlib=$HOME/Desktop/tebdmaster/lib/python
 #export CP=$THESIS/bin/TEBDnew/XXZDiss
@@ -75,7 +81,9 @@ else
 fi
 # bash convenience
 export HISTCONTROL=ignoreboth:erasedups
-export HISTFILESIZE=1000000
+export HISTFILESIZE=100000000
+HISTSIZE=100000
+PROMPT_COMMAND="history -a"
 #if [ -n `command -v gvim` ]; then
 #    alias vim='gvim -v'
 #fi
@@ -92,6 +100,10 @@ export EDITOR=vim
 # disable capslock without disabling capslock key
 setxkbmap -option 'caps:none'
 xmodmap -e 'keycode 66=Escape'
+
+function clean_typescript {
+  sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" "$1" | col -bx  | less -R
+}
 
 function ct {
 IN=$PWD
@@ -148,3 +160,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\w$(__git_ps1 " (%s)")\$ '
 alias go='git checkout '
 
+alias g="grep -I -R --exclude-dir=build* --exclude-dir=install --exclude-dir=.git"
+
+# .bashrc
+#. $HOME/FCC.sh
