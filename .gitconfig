@@ -1,6 +1,7 @@
 [user]
 	name = Valentin Volkl
 	email = valentin.volkl@cern.ch
+	github = vvolkl
 [push]
 	default = current
 

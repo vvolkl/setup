@@ -1,6 +1,15 @@
 # .bashrc
 
-source /afs/cern.ch/sw/IntelSoftware/linux/all-setup.sh &> /dev/null;
+alias root='root -l'
+alias rootls='rootls -t'
+
+export FONTCONFIG_PATH=/etc/fonts
+export WOR=/afs/cern.ch/work/v/vavolkl/
+
+#source /afs/cern.ch/sw/IntelSoftware/linux/all-setup.sh &> /dev/null;
+
+# fix for tap to click on XPS 13
+#synclient TapButton1=1
 
 # Add the passed value only to path if it's not already in there.
 function add_to_path {
