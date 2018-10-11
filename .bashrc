@@ -1,4 +1,6 @@
 
+export R=$HOME/Repos
+
 alias root='root -l'
 alias rootls='rootls -t'
 
