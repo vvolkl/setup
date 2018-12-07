@@ -1,5 +1,6 @@
 export FCCPATH=$HOME/FCC
 source /cvmfs/sft.cern.ch/lcg/views/LCG_93/x86_64-ubuntu1604-gcc54-opt/setup.sh 
+source /cvmfs/sft.cern.ch/lcg/views/LCG_93/x86_64-ubuntu1604-gcc54-opt/bin/thisdd4hep_only.sh
 
 add_to_path CMAKE_PREFIX_PATH $FCCPATH/install
 add_to_path CMAKE_PREFIX_PATH $FCCPATH/Gaudi/InstallArea/x86_64-ubuntu1604-gcc54-opt/

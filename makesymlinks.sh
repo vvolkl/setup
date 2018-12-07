@@ -9,7 +9,8 @@
 dir=$PWD                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 # list of files/folders to symlink in homedir
-files=".bashrc .vimrc .vim .config/matplotlib/matplotlibrc .fonts .ipython/profile_default/startup .latexmkrc .newsbeuter/urls .newsbeuter/config .inputrc .zshrc .oh-my-zsh .gitconfig FCC.sh"    
+files=".bashrc .vimrc .vim .config/matplotlib/matplotlibrc .fonts .ipython/profile_default/startup .latexmkrc  .inputrc  .gitconfig FCC.sh FCClight.sh" 
+#.newsbeuter/urls .newsbeuter/config .zshrc .oh-my-zsh
 ##########
 
 # create dotfiles_old in homedir

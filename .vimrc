@@ -8,6 +8,7 @@ set shiftwidth=2
 set background=dark
 set smartindent "horrible when copy&pasting"
 set smarttab
+set textwidth=100
 colorscheme distinguished
 
 "selecting a whole block based on indentation"
@@ -40,7 +41,8 @@ map <F8> :let mycurf=expand("<cfile>")<cr>  :execute("tag ".mycurf)<cr>
 map <F5> <Esc>:w<CR>:!make<CR>
 imap jk <Esc>
 "latex sentence formatting"
-map Z vas5<vasgq>as<<)
+"map Z vas5<vasgq>as<<)"
+map Z vasgq>as<<)
 
 " ignore these files when completing names and in Ex
 set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pdf,*.bak,*.beam,*.aux,*.loc,*.lox,*.backup,*.toc

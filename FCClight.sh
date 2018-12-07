@@ -1,20 +1,19 @@
 export FCCPATH=$HOME/FCC
 
-add_to_path CMAKE_PREFIX_PATH $FCCPATH/podio/install_lwl
-add_to_path CMAKE_PREFIX_PATH $FCCPATH/dag/install_lwl
+add_to_path CMAKE_PREFIX_PATH $HOME/install
 
-source ~/Downloads/root/bin/thisroot.sh
-
-
-export PODIO=$FCCPATH/podio/install_lwl
+source ~/install/root/bin/thisroot.sh
 
 
-
-export BINARY_TAG=x86_64-ubuntu1604-gcc54-opt
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/FCC/fcc-edm/install_lwl/lib:$HOME/FCC/podio/install_lwl/lib
+export PODIO=$HOME/Repos/podio
 
 
-export PYTHONPATH=$PYTHONPATH:$HOME/FCC/podio/python
+
+export BINARY_TAG=x86_64-ubuntu1804-gcc73-opt
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/install/lib
+
+
+export PYTHONPATH=$PYTHONPATH:$HOME/install/python
 export FCCPLOTS=$HOME/cernbox/www/pileup/plots
 
