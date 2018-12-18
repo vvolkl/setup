@@ -1,23 +1,32 @@
-export FCCPATH=$HOME/FCC
-source /cvmfs/sft.cern.ch/lcg/views/LCG_93/x86_64-ubuntu1604-gcc54-opt/setup.sh 
-source /cvmfs/sft.cern.ch/lcg/views/LCG_93/x86_64-ubuntu1604-gcc54-opt/bin/thisdd4hep_only.sh
-
-add_to_path CMAKE_PREFIX_PATH $FCCPATH/install
-add_to_path CMAKE_PREFIX_PATH $FCCPATH/Gaudi/InstallArea/x86_64-ubuntu1604-gcc54-opt/
-
-
-export PODIO=$FCCPATH/install
+export FCCPATH=/opt/fcc
+export LCGPATH=/opt/fcc
+thisdir=$PWD
+cd /opt/fcc
+source bin/thisroot.sh
+source bin/geant4.sh
+source bin/thisdd4hep_only.sh
 
 
-export CMTPROJECTPATH=/cvmfs/sft.cern.ch/lcg/releases
-export BINARY_TAG=x86_64-ubuntu1604-gcc54-opt
+
+
+
+export PODIO=/opt/fcc
+
+
+export BINARY_TAG=x86_64-ubuntu1804-gcc8-opt
 
 # echo "Set Library Path..."
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/FCC/install/lib:$HOME/FCC/install/lib
+export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$LCGPATH
+export PATH=$PATH:$LCGPATH/bin/:$LCGPATH/scripts
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LCGPATH/lib
+export PYTHONPATH=$PYTHONPATH:$LCGPATH/python
+export FCCPLOTS=$HOME/Plots
 
+export PYTHIA8_DIR=$LCGPATH
+export PYTHIA8_XML=$LCGPATH/share/Pythia8/xmldoc
+export PYTHIA8DATA=$PYTHIA8_XML
+export HEPMC_PREFIX=$LCGPATH
 
-export PYTHONPATH=$PYTHONPATH:$HOME/FCC/podio/python:$HOME/FCC/tricktrack/install/lib
+export ROOT_INCLUDE_PATH=$LCGPATH/include:$LCGPATH/include/datamodel
 
-export FCCPLOTS=$HOME/cernbox/www/pileup/plots
-
-
+cd $thisdir
