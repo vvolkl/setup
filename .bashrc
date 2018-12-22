@@ -1,4 +1,5 @@
 
+alias lxp='ssh -o StrictHostKeyChecking=no -o GSSAPIAuthentication=yes -o GSSAPITrustDNS=yes -o GSSAPIDelegateCredentials=yes vavolkl@lxplus.cern.ch'
 export R=$HOME/Repos
 export FCCPLOTS=$HOME/Plots
 
