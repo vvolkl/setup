@@ -6,6 +6,12 @@ export FCCPLOTS=$HOME/Plots
 alias root='root -l'
 alias rootls='rootls -t'
 
+export EOS_MGM_URL=root://eosuser.cern.ch
+export HEPTOOLS_VERSION=94
+export CMTPROJECTPATH=/cvmfs/sft.cern.ch/lcg/releases/LCG_94/
+export BINARY_TAG=x86_64-ubuntu1804-gcc7-opt
+alias lcgsetup='source /cvmfs/sft.cern.ch/lcg/views/LCG_94/x86_64-ubuntu1804-gcc7-opt/setup.sh'
+
 #export FONTCONFIG_PATH=/etc/fonts
 
 # fix for tap to click on XPS 13
@@ -105,8 +111,8 @@ export SVN_EDITOR=vim
 export EDITOR=vim
 
 # disable capslock without disabling capslock key
-setxkbmap -option 'caps:none'
-xmodmap -e 'keycode 66=Escape'
+#setxkbmap -option 'caps:none'
+#xmodmap -e 'keycode 66=Escape'
 
 #function clean_typescript {
 #  sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" "$1" | col -bx  | less -R
