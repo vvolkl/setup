@@ -1,0 +1,8 @@
+
+Maintainer: valentin.volkl@gmail.com
+Version: 0.0-1
+Priority: optional
+Package: setup-latex
+Architecture: all
+Recommends: latexmk, latex-texlive-extras, texlive-lang-english, texlive-fonts-extra
+Description: setup for latex builds
