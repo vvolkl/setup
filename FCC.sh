@@ -2,8 +2,6 @@ export FCCPATH=/opt/fcc
 export LCGPATH=/opt/fcc
 thisdir=$PWD
 cd /opt/fcc
-#source bin/thisroot.sh
-
 
 
 
@@ -17,7 +15,7 @@ export BINARY_TAG=x86_64-ubuntu1804-gcc7-opt
 export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$LCGPATH
 export PATH=$PATH:$LCGPATH/bin/:$LCGPATH/scripts
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LCGPATH/lib
-export PYTHONPATH=$PYTHONPATH:$LCGPATH/python
+export PYTHONPATH=$PYTHONPATH:$LCGPATH/python:$LCGPATH/lib
 export FCCPLOTS=$HOME/Plots
 
 export PYTHIA8_DIR=$LCGPATH
