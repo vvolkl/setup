@@ -1,5 +1,5 @@
 # Use Vi, not Emacs, style editing
-set editing-mode vi
+#set editing-mode vi
 
 # Show all completions as soon as I press tab, even if there's more than one
 set show-all-if-ambiguous on
@@ -11,15 +11,15 @@ set completion-ignore-case on
 
 ###########################################################
 # Keymaps for when we're in command mode (e.g., after hitting ESC)
-set keymap vi-command
+#set keymap vi-command
 
 # Insert the arguments from the last command
-"p": "i !!*\r"
+#"p": "i !!*\r"
 
 #Keymaps for when we're in insert (i.e., typing stuff in) mode
-set keymap vi-insert
+#set keymap vi-insert
 
-"jk": vi-movement-mode
+#"jk": vi-movement-mode
 # Pressing tab will list all completions & select the first one. Pressing it 
 # again will cycle through available completions.
 TAB: menu-complete
@@ -30,7 +30,10 @@ TAB: menu-complete
 "\e\e[A": history-search-backward
 "\e\e[B": history-search-forward
 
+"\C-b":vi-bWord
+"\C-f":vi-fWord
+
 # Needed because binding 'p' in command mode above wipes its insert mode
 # function, too. This fixes that, and will insert 'p' when you type 'p'.
-"p": self-insert
+#"p": self-insert
 
