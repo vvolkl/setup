@@ -1,3 +1,5 @@
+
+export EOSHOME=root://eosuser.cern.ch//eos/user/v/vavolkl/
 export gh="https://github.com"
 alias lxp='ssh -o StrictHostKeyChecking=no -o GSSAPIAuthentication=yes -o GSSAPITrustDNS=yes -o GSSAPIDelegateCredentials=yes vavolkl@lxplus.cern.ch'
 export R=$HOME/Repos
