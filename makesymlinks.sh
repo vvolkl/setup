@@ -7,9 +7,9 @@
 ########## Variables
 
 dir=$PWD                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
+olddir=~/.dotfiles.backup            # old dotfiles backup directory
 # list of files/folders to symlink in homedir
-files=".bashrc .vimrc .vim .config/matplotlib/matplotlibrc .fonts .ipython/profile_default/startup .latexmkrc  .inputrc  .gitconfig FCC.sh FCClight.sh" 
+files=".bashrc .vimrc .vim .config/matplotlib/matplotlibrc .fonts .ipython/profile_default/startup .latexmkrc  .inputrc  .gitconfig" 
 #.newsbeuter/urls .newsbeuter/config .zshrc .oh-my-zsh
 ##########
 
