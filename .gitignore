@@ -1,4 +1,5 @@
 *.pyc
+secret*
 *.swp
 .keytab
 *.netrwhist
