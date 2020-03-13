@@ -1,0 +1,13 @@
+#!/bin/bash
+
+dbdir=~/cernbox/.db${dbdirext}
+
+filehash=`git hash-object $1`
+fullfile=$1
+filename=$(basename -- "$fullfile")
+extension="${filename##*.}"
+filename="${filename%.*}"
+echo "mv $1  $dbdir/$filehash.$extension"
+mv $1  $dbdir/$filehash.$extension
+ln -s $dbdir/$filehash.$extension $1
+echo "$filehash.$extension $1" >> $dbdir/index.md
