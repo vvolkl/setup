@@ -1,4 +1,6 @@
 *.pyc
+.newsbeuter/
+.fonts/typecatcher
 .uuid
 secret*
 *.swp

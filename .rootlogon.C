@@ -4,18 +4,18 @@
 {
 gStyle->SetPadTopMargin(0.055);
 gStyle->SetPadBottomMargin(0.16);
-gStyle->SetPadLeftMargin(0.16);
-gStyle->SetPadRightMargin(0.024);
+gStyle->SetPadLeftMargin(0.13);
+gStyle->SetPadRightMargin(0.035);
 
-gStyle->SetCanvasDefH(1386);
-gStyle->SetCanvasDefW(1120); 
+gStyle->SetCanvasDefW(1586);
+gStyle->SetCanvasDefH(1120); 
 
 gStyle->SetLabelSize(0.05, "XYZ");
 gStyle->SetLabelOffset(0.007, "XYZ");
 
 gStyle->SetTitleSize(0.05, "XYZ");
-gStyle->SetTitleXOffset(1.4);
-gStyle->SetTitleYOffset(1.25);
+gStyle->SetTitleXOffset(1.2);
+gStyle->SetTitleYOffset(1.2);
 
 gStyle->SetOptStat(0);
 }

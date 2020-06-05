@@ -1,28 +1,18 @@
 
+export PATH=$PATH:$HOME/repo/pmu-tools
+export PATH=$PATH:$HOME/repo/flamegraph
 
 setxkbmap -option caps:escape
 export EOSHOME=root://eosuser.cern.ch//eos/user/v/vavolkl/
 export gh="https://github.com"
 alias lxp='ssh -o StrictHostKeyChecking=no -o GSSAPIAuthentication=yes -o GSSAPITrustDNS=yes -o GSSAPIDelegateCredentials=yes vavolkl@lxplus.cern.ch'
-export R=$HOME/Repos
+export R=$HOME/repo
 export FCCPLOTS=$HOME/Plots
 
 alias root='root -l'
 alias rootls='rootls -t'
 
 export EOS_MGM_URL=root://eosuser.cern.ch
-export HEPTOOLS_VERSION=94
-export CMTPROJECTPATH=/cvmfs/sft.cern.ch/lcg/releases/LCG_94/
-export BINARY_TAG=x86_64-ubuntu1804-gcc7-opt
-alias lcgsetup='source /cvmfs/sft.cern.ch/lcg/views/LCG_94/x86_64-ubuntu1804-gcc7-opt/setup.sh'
-
-#export FONTCONFIG_PATH=/etc/fonts
-
-# fix for tap to click on XPS 13
-#synclient TapButton1=1
-
-#export WOR=/afs/cern.ch/work/v/vavolkl
-#source /afs/cern.ch/sw/IntelSoftware/linux/all-setup.sh &> /dev/null;
 
 # Add the passed value only to path if it's not already in there.
 function add_to_path {
@@ -51,38 +41,11 @@ export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
 alias ls='ls $LS_OPTIONS'
 
-#export AFSHOME=/afs/cern.ch/user/v/vavolkl
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+export FCC_DETECTORS=/usr/local/
+export FCCSWBASEDIR=/usr/local
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-
-### intel mkl
-#source /opt/intel/mkl/bin/mklvars.sh intel64
-#source /opt/intel/bin/iccvars.sh intel64
-#export F95ROOT=/opt/intel/mkl
-#export C_INCLUDE_PATH=$C_INCLUDE_PATH:/usr/lib64/python2.7/site-packages/numpy/core/include/
-#alias lgfortran='gfortran  ${F95ROOT}/lib/intel64/libmkl_blas95_lp64.a -Wl,--no-as-needed -L${MKLROOT}/lib/intel64 -lmkl_gf_lp64 -lmkl_core -lmkl_sequential -lpthread -lm  -I${F95ROOT}/include/intel64/lp64 -m64 -I${MKLROOT}/include'
-
-### alps library
-#export PATH=$HOME/soft/bin:/opt/alps/bin:$PATH
-
-#export ROOTSYS=/opt/hep
-#export PATH=$ROOTSYS/bin:$PATH
-#export C_INCLUDE_PATH=$C_INCLUDE_PATH:$ROOTSYS/include/root
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib
-#export PYTHONPATH=$PYTHONPATH:/opt/hep/lib/root
-#export PYTHONPATH=$PYTHONPATH:$ROOTSYS/python
-
-# thesis stuff
-#export PYTHONPATH=$HOME/tebdmaster/lib/python/:$PYTHONPATH
-#export THESIS=$HOME/Dropbox/master-thesis
-#export tlib=$HOME/Desktop/tebdmaster/lib/python
-#export CP=$THESIS/bin/TEBDnew/XXZDiss
-#export RTHESIS=/net/mungo3/csak4665/tebdmaster
-#export RHOME=/net/mungo3/csak4665
-#export HOME2=$HOME/cluster.archive
 #alias downrsync='rsync -av -e ssh csak4665@quaxo:${PWD/$HOME2/$RHOME}/ $PWD/'
 #alias uprsync='rsync -av $PWD/ csak4665@hbar:${PWD/$THESIS/$RTHESIS}/ '
 
@@ -97,10 +60,11 @@ else
   export PS1="\[\e[33;40m\][\u@\h \W]\$\[\033[m\]"
 fi
 # bash convenience
-export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=100000000
-HISTSIZE=100000
-PROMPT_COMMAND="history -a"
+export HISTSIZE=100000
+HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 #if [ -n `command -v gvim` ]; then
 #    alias vim='gvim -v'
 #fi
@@ -179,5 +143,3 @@ alias go='git checkout '
 
 alias g="grep -I -R --exclude-dir=build* --exclude-dir=install --exclude-dir=.git"
 
-# .bashrc
-#. $HOME/FCC.sh
