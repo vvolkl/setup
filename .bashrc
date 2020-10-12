@@ -1,4 +1,6 @@
 
+source ~/repo/spack/share/spack/setup-env.sh
+
 export PATH=$PATH:$HOME/repo/pmu-tools
 export PATH=$PATH:$HOME/repo/flamegraph
 
